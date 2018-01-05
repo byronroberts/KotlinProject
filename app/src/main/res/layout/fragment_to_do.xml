@@ -9,25 +9,25 @@
     <TextView
         android:layout_width="132dp"
         android:layout_height="33dp"
-        android:text="Enter a task"
+        android:text="@string/enter_a_task"
         android:textAlignment="center"
         android:textSize="20sp"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"/>
 
     <EditText
-        android:id="@+id/to_do_entry"
+        android:id="@+id/toDoEntry"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="70dp" />
 
     <Button
-        android:id="@+id/done_button"
+        android:id="@+id/doneButton"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:background="@color/green"
-        android:text="Done"
+        android:text="@string/done"
         android:layout_gravity="center_horizontal" />
 
     <TextView

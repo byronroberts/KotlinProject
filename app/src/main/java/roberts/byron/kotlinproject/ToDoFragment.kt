@@ -17,11 +17,11 @@ class ToDoFragment : Fragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        done_button.setOnClickListener{ addElementToList() }
+        doneButton.setOnClickListener{ addElementToList() }
     }
 
     private fun addElementToList() {
-        toList.add(to_do_entry.text.toString())
+        toList.add(toDoEntry.text.toString())
         entered_text.text = ""
         val stringBuilder = StringBuilder()
         val textToShow : String?
