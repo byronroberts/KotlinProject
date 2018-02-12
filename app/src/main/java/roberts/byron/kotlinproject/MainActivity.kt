@@ -60,7 +60,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 transaction.commit()
             }
             R.id.nav_gallery -> {
-
+                val transaction = fragmentManager.beginTransaction()
+                val fragment = ImagePickerFragment()
+                transaction.add(R.id.fragment_container, fragment)
+                transaction.commit()
             }
             R.id.nav_slideshow -> {
 

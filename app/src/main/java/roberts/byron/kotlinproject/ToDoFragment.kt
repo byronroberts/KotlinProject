@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.app.Fragment
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.helper.ItemTouchHelper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +32,10 @@ class ToDoFragment : Fragment() {
         toDoListAdapter = ToDoListRecyclerViewAdapter(toDoListItems, activity)
         toDoRecyclerView.layoutManager = linearLayoutManager
         toDoRecyclerView.adapter = toDoListAdapter
+
+        val callback = SimpleItemTouchHelperCallback(toDoListAdapter)
+        val touchHelper = ItemTouchHelper(callback)
+        touchHelper.attachToRecyclerView(toDoRecyclerView)
 
         completionDate.setOnClickListener { openDatePicker() }
     }
