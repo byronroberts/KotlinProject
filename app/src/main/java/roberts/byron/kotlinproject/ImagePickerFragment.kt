@@ -6,10 +6,12 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.helper.ItemTouchHelper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_image_picker.*
+import kotlinx.android.synthetic.main.fragment_to_do.*
 
 
 class ImagePickerFragment : Fragment() {
@@ -35,6 +37,10 @@ class ImagePickerFragment : Fragment() {
         val adapter = ImagePickerRecyclerViewAdapter()
         images_recycler_view.layoutManager = GridLayoutManager(context,  3)
         images_recycler_view.adapter = adapter
+
+        val callback = SimpleItemTouchHelperCallback(adapter)
+        val touchHelper = ItemTouchHelper(callback)
+        touchHelper.attachToRecyclerView(images_recycler_view)
 
         val columns = arrayOf(MediaStore.Images.Media.DATA, MediaStore.Images.Media._ID)
         val orderBy = MediaStore.Images.Media._ID

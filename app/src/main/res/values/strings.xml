@@ -9,4 +9,6 @@
     <string name="kotlin_project_example">Kotlin Project Example</string>
     <string name="enter_a_task">Enter a task</string>
     <string name="done">Done</string>
+
+    <string name="flash_status">Flash mode: %s</string>
 </resources>

@@ -1,5 +1,6 @@
 package roberts.byron.kotlinproject
 
+import android.hardware.Camera
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -66,7 +67,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 transaction.commit()
             }
             R.id.nav_slideshow -> {
-
+                val transaction = fragmentManager.beginTransaction()
+                val fragment = CameraFragment()
+                transaction.add(R.id.fragment_container, fragment)
+                transaction.commit()
             }
             R.id.nav_manage -> {
 
