@@ -1,8 +1,6 @@
 package roberts.byron.kotlinproject
 
-import android.hardware.Camera
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -66,17 +64,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 transaction.add(R.id.fragment_container, fragment)
                 transaction.commit()
             }
-            R.id.nav_slideshow -> {
+            R.id.nav_camera -> {
                 val transaction = fragmentManager.beginTransaction()
                 val fragment = CameraFragment()
                 transaction.add(R.id.fragment_container, fragment)
                 transaction.commit()
             }
-            R.id.nav_manage -> {
-
+            R.id.nav_anim_icon -> {
+                val transaction = fragmentManager.beginTransaction()
+                val fragment = ConstraintLayoutFragment()
+                transaction.add(R.id.fragment_container, fragment)
+                transaction.commit()
             }
-            R.id.nav_share -> {
-
+            R.id.nav_anim_kotlin_java -> {
+                val transaction = fragmentManager.beginTransaction()
+                val fragment = ConstraintAnimationFragment()
+                transaction.add(R.id.fragment_container, fragment)
+                transaction.commit()
             }
             R.id.nav_send -> {
 
